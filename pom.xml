@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ckreps</groupId>
+  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>g-cradle</artifactId>
+  <name>g-cradle</name>
+  <packaging>jar</packaging>
+  <inceptionYear>2012</inceptionYear>
+
+  <properties>
+    <scala.version>2.9.1</scala.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>scala-tools.releases</id>
+      <name>Scala-Tools Dependencies Repository for Releases</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+    <repository>
+      <id>twitter</id>
+      <url>http://maven.twttr.com/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.releases</id>
+      <name>Scala-Tools Plugins Repository for Releases</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_2.9.0</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.7</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <version>2.14</version>
+        <configuration>
+          <charset>${project.build.sourceEncoding}</charset>
+          <jvmArgs>
+            <jvmArg>-Xmx1024m</jvmArg>
+            <jvmArg>-DpackageLinkDefs=file://${project.build.directory}/packageLinkDefs.properties</jvmArg>
+          </jvmArgs>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+</project>
