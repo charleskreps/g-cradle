@@ -1,6 +1,7 @@
 # g-cradle
 
 **A little Graph data structure manipulation library.**
+
 **(Written in Scala)**
 
 I encounter the "we could store that in a Graph" idea every month or so from a peer at the office or on my own doing a weekend project.  But I rarely see it go any further than that.  I see two issues that tend to get in the way:
