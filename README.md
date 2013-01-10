@@ -5,6 +5,7 @@
 **(Written in Scala)**
 
 I encounter the "we could store that in a Graph" idea every month or so from a peer at the office or on my own doing a weekend project.  But I rarely see it go any further than that.  I see two issues that tend to get in the way:
+
 1. The devil is in the details:  A Graph gives you a strong intuitive sense that it's a good solution.  But everything can point to everything.  So it's hard to agree or feel confident about how you end up structuring your data.
 2. A Graph database is easily overkill:  When all you want is a little Graph it should be as easy as getting a List or a Set.  While you can use some Graph databases in a "lightweight" manner it can still feel like taking a sledgehammer to crack a nut. 
 
